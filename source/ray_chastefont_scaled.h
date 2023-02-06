@@ -1,4 +1,8 @@
-/*chastity font scaled header*/
+/*
+ Chastity font scaled header
+ 
+ This file contains one function which is powerful but that I do not always have need of. If I need scalable fonts in a later game I make, then I will have this file ready.
+*/
 
 
 /*
@@ -33,8 +37,4 @@ void chaste_font_draw_string_scaled(char *s,int cx,int cy,int scale)
   i++;
  }
 }
-
-
-
-
 
