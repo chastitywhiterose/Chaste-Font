@@ -30,13 +30,13 @@ void demo_chaste_font()
 
  main_font=font_16;
 
- sprintf(text,"https://github.com/chastitywhiterose/chastetris");
- chaste_font_draw_string(text,text_x,main_font.char_height*24);
+ sprintf(text,"https://github.com/chastitywhiterose/Chaste-Font/tree/main/source/SDL");
+ chaste_font_draw_string(text,text_x,main_font.char_height*14);
 
  main_font=font_8;
 
  sprintf(text,"This is the SDL port of the Chaste Font project which was written in Raylib originally.");
- chaste_font_draw_string(text,text_x,main_font.char_height*52);
+ chaste_font_draw_string(text,text_x,main_font.char_height*32);
 
  SDL_UpdateWindowSurface(window); /*update the screen*/
 

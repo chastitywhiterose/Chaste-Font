@@ -17,7 +17,7 @@ struct chaste_font
 
 
 /*global fonts that will be reused many times*/
-struct chaste_font main_font,font_8,font_16,font_32,font_64,font_128;
+struct chaste_font main_font,font_8,font_16,font_32,font_64,font_128,font_pico8;
 
 /*function to load a font and return a structure with the needed data to draw later*/
 struct chaste_font chaste_font_load(char *s)
