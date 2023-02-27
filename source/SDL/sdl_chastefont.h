@@ -23,7 +23,7 @@ struct chaste_font main_font,font_8,font_16,font_32,font_64,font_128,font_pico8;
 struct chaste_font chaste_font_load(char *s)
 {
  struct chaste_font new_font;
- printf("This function tries to load a font\n");
+ printf("Loading font: %s\n",s);
 
  new_font.surface=SDL_LoadBMP(s);
 
@@ -43,7 +43,7 @@ struct chaste_font chaste_font_load(char *s)
  }
  else
  {
-  printf("Font loaded correctly\n");
+  /*printf("Font loaded correctly\n");*/
   printf("Size of loaded font is %d,%d\n",new_font.char_width,new_font.char_height);
  }
 

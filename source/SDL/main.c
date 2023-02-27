@@ -52,7 +52,7 @@ int main(int argc, char* args[])
  SDL_UpdateWindowSurface(window);
 
  
- font_pico8=chaste_font_load("./font/PICO-8_4x6.png");
+ font_pico8=chaste_font_load("./font/PICO-8_4x6.bmp");
  
  font_8=chaste_font_load("./font/FreeBASIC Font 8.bmp");
  font_16=chaste_font_load("./font/FreeBASIC Font 16.bmp");
