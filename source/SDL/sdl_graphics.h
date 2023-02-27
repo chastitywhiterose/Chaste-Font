@@ -44,7 +44,8 @@ void demo_chaste_font()
  sprintf(text,"This font is from PICO-8. I can fit a lot of text on the screen with this tiny font!");
  chaste_font_draw_string(text,text_x,main_font.char_height*48);
  
- 
+  sprintf(text,"Scaled PICO-8 font.");
+ chaste_font_draw_string_scaled(text,text_x,main_font.char_height*60,3);
 
  SDL_UpdateWindowSurface(window); /*update the screen*/
 

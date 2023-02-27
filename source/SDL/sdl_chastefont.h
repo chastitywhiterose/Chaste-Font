@@ -88,3 +88,52 @@ void chaste_font_draw_string(char *s,int cx,int cy)
 
 
 
+
+/*
+ This function successfully draws a string of characters from the current loaded main font 
+ arguments are: character pointer, character x pos, character y pos, integer scale
+ 
+ It makes use of DrawTexturePro which is quite a complicated function capable of scaling as well as rotating textures.
+ Rotation makes no sense when outputting text which is meant to be readable.
+ But the scaling abilities of this function mean that it can multiply the font size by whatever you give it.
+ Therefore, an 8x8 character font such as the smallest one I have created can literally be scaled to any multiple of 8. So a scale of 3 would result in each character being 24x24.
+*/
+void chaste_font_draw_string_scaled(char *s,int cx,int cy,int scale)
+{
+ int x,y,i,c,cx_start=cx;
+ SDL_Rect rect_source,rect_dest;
+ i=0;
+ while(s[i]!=0)
+ {
+  c=s[i];
+  if(c=='\n'){ cx=cx_start; cy+=main_font.char_height;}
+  else
+  {
+   x=(c-' ')*main_font.char_width;
+   y=0*main_font.char_height;
+
+   rect_source.x=x;
+   rect_source.y=y;
+   rect_source.w=main_font.char_width;
+   rect_source.h=main_font.char_height;
+
+   rect_dest=rect_source;
+   rect_dest.x=cx;
+   rect_dest.y=cy;
+   rect_dest.w=main_font.char_width*scale;
+   rect_dest.h=main_font.char_height*scale;
+
+ /*SDL_BlitSurface(main_font.surface,&rect_source,surface,&rect_dest);*/
+   if(SDL_BlitScaled(main_font.surface,&rect_source,surface,&rect_dest)){printf("Error: %s\n",SDL_GetError());}
+   cx+=main_font.char_width*scale;
+  }
+  i++;
+ }
+}
+
+
+
+
+
+
+

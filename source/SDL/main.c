@@ -68,6 +68,7 @@ int main(int argc, char* args[])
  SDL_DestroyWindow(window);
  SDL_Quit();
 
+ SDL_FreeSurface(font_pico8.surface);
  SDL_FreeSurface(font_8.surface);
  SDL_FreeSurface(font_16.surface);
  SDL_FreeSurface(font_32.surface);
@@ -81,7 +82,7 @@ Compile within Unix/Linux/msys
 gcc -Wall -ansi -pedantic main.c -o main `sdl2-config --cflags --libs` && ./main
 
 Static Compile within Unix/Linux/msys
-gcc -Wall -ansi -pedantic main.c -o main `sdl2-config --cflags --static-libs` -static && ./main
+gcc -Wall -ansi -pedantic main.c -o main `sdl2-config --cflags --static-libs` && ./main
 
 Compiling on Windows:
 
