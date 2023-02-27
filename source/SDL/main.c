@@ -14,12 +14,8 @@ SDL_Rect rect;
 
 int rect_color;
 
-
 int frame=0,lastframe=0,fps=60,delay,framelimit=1; /*only used for animation demos*/
 int time,time1;
-
-char gamename[256];
-int blocks_used=7;
 
 char text[0x200];
 char movetext[256],move_id;
@@ -30,19 +26,14 @@ char filename[256]; /*name of move log file*/
 FILE *fp_input; /*file to get input from instead of the keyboard*/
 
 #include "sdl_chastefont.h"
+#include "sdl_chastefont_demo.h"
 #include "sdl_input.h"
-#include "sdl_graphics.h"
-
-
-
-
-
 
 int main(int argc, char* args[])
 {
 
  if(SDL_Init(SDL_INIT_VIDEO)){printf( "SDL could not initialize! SDL_Error: %s\n",SDL_GetError());return -1;}
- window=SDL_CreateWindow( "SDL Chaste Tris",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,width,height,SDL_WINDOW_SHOWN );
+ window=SDL_CreateWindow( "SDL Chaste Font",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,width,height,SDL_WINDOW_SHOWN );
  if(window==NULL){printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );return -1;}
 
  /*set up the screen*/
@@ -76,6 +67,28 @@ int main(int argc, char* args[])
 
  return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 Compile within Unix/Linux/msys
