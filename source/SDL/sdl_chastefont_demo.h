@@ -91,7 +91,7 @@ void demo_chaste_font_1()
   text_x=main_font.char_height*5;
 
   chaste_palette_index=chaste_palette_index1;
-  chaste_font_draw_string_scaled_special("Chaste\n  the\nRainbow",text_x,main_font.char_height*10,20);
+  chaste_font_draw_string_scaled_special("Chaste\n  the\nPastels",text_x,main_font.char_height*10,20);
   
   chaste_palette_index1++;
   if(chaste_palette_index1>=chaste_palette_length)

@@ -34,6 +34,12 @@ FILE *fp_input; /*file to get input from instead of the keyboard*/
 
 int main(int argc, char* args[])
 {
+ /*set up colors first*/
+ /*chaste_palette_rainbow(40);*/
+ chaste_palette_rainbow_pastel(80);
+
+ chaste_palette_view();
+ /*return 0;*/
 
  if(SDL_Init(SDL_INIT_VIDEO)){printf( "SDL could not initialize! SDL_Error: %s\n",SDL_GetError());return -1;}
  window=SDL_CreateWindow( "SDL Chaste Font",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,width,height,SDL_WINDOW_SHOWN );
@@ -53,8 +59,7 @@ int main(int argc, char* args[])
  font_32=chaste_font_load("./font/FreeBASIC Font 32.bmp");
  font_64=chaste_font_load("./font/FreeBASIC Font 64.bmp");
 
- chaste_palette_rainbow(40);
- /*chaste_palette_view();*/
+
 
  demo_chaste_font_1();
 
