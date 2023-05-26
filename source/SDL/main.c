@@ -16,6 +16,7 @@ int rect_color;
 
 int frame=0,lastframe=0,fps=60,delay,framelimit=1; /*only used for animation demos*/
 int time,time1;
+int sdl_time,sdl_time1;
 
 char text[0x200];
 char movetext[256],move_id;
@@ -25,9 +26,11 @@ FILE *fp; /*to save a file of moves played*/
 char filename[256]; /*name of move log file*/
 FILE *fp_input; /*file to get input from instead of the keyboard*/
 
+#include "chaste_the_rainbow.h"
 #include "sdl_chastefont.h"
-#include "sdl_chastefont_demo.h"
 #include "sdl_input.h"
+#include "sdl_chastefont_demo.h"
+
 
 int main(int argc, char* args[])
 {
@@ -50,11 +53,12 @@ int main(int argc, char* args[])
  font_32=chaste_font_load("./font/FreeBASIC Font 32.bmp");
  font_64=chaste_font_load("./font/FreeBASIC Font 64.bmp");
 
- demo_chaste_font();
+ chaste_palette_rainbow(40);
+ /*chaste_palette_view();*/
+
+ demo_chaste_font_1();
 
  main_font=font_64;
-
-
 
  SDL_DestroyWindow(window);
  SDL_Quit();
