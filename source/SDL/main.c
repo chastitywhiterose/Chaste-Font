@@ -38,7 +38,8 @@ int main(int argc, char* args[])
  /*chaste_palette_rainbow(40);*/
  chaste_palette_rainbow_pastel(80);
 
- chaste_palette_view();
+ /*chaste_palette_view();*/
+
  /*return 0;*/
 
  if(SDL_Init(SDL_INIT_VIDEO)){printf( "SDL could not initialize! SDL_Error: %s\n",SDL_GetError());return -1;}
@@ -61,7 +62,7 @@ int main(int argc, char* args[])
 
 
 
- demo_chaste_font_1();
+ demo_chaste_font_2();
 
  main_font=font_64;
 

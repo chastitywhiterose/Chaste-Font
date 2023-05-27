@@ -116,3 +116,50 @@ void demo_chaste_font_1()
 
 }
 
+
+
+void demo_chaste_font_2()
+{
+
+ delay=1000/fps;
+
+ loop=1;
+ while(loop)
+ {
+
+  sdl_time = SDL_GetTicks();
+  sdl_time1 = sdl_time+delay;
+
+
+  SDL_FillRect(surface,NULL,SDL_MapRGB(surface->format,0,0,0));
+
+  main_font=font_8;
+
+  text_x=main_font.char_height*32;
+
+  chaste_palette_index=chaste_palette_index1;
+  chaste_font_draw_string_scaled_special("I\nlove\nyou!",text_x,main_font.char_height*8,24);
+  
+  chaste_palette_index1++;
+  if(chaste_palette_index1>=chaste_palette_length)
+  {
+   chaste_palette_index1=0;
+  }
+ 
+  SDL_UpdateWindowSurface(window); /*update the screen*/
+
+  /*test for events and only process if they exist*/
+  while(SDL_PollEvent(&e))
+  {
+   keyboard();
+  }
+
+ while(sdl_time<sdl_time1)
+ {
+  sdl_time=SDL_GetTicks();
+ }
+
+ }
+
+}
+
